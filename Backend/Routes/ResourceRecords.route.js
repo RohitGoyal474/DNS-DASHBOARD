@@ -4,7 +4,7 @@ import { verifyJWT } from "../Middleware/auth.Middleware.js";
 
 const router = Router();
 
-router.route("/RecourceRecordsList").get(verifyJWT,ListResourceRecords);
+router.route("/RecourceRecordsList").get(ListResourceRecords);
 router.route("/CreateRecourceRecords").post(CreateResourceRecord);
 
 router.route("/DeleteRecourceRecords").post(deleteResourceRecord);
