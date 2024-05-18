@@ -23,10 +23,14 @@ const CreateRecordButton = ({Id,name}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+   try {
     CreateRecord(formData);
     console.log("created: ", formData);
     location.reload();
+   } catch (error) {
+    console.log(error);
+   }
+    
   };
   
 

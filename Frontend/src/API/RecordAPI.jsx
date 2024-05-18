@@ -6,29 +6,45 @@ export const RecordAPI = axios.create({
 });
 
 export const RecordList = async (Id) => {
-  const { data } = await RecordAPI.get(`/RecourceRecordsList?Id=${Id}`, {
-    withCredentials: true,
-  });
-  console.log("record : ",data);
-  return data;
+  try {
+    const { data } = await RecordAPI.get(`/RecourceRecordsList?Id=${Id}`, {
+      withCredentials: true,
+    });
+    console.log("record : ", data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const CreateRecord = async (input) => {
+  try {
+    const { data } = await RecordAPI.post("/CreateRecourceRecords", input);
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
   
-  const { data } = await RecordAPI.post("/CreateRecourceRecords", input);
-  console.log(data);
-  return data;
 };
 export const UpdateRecord = async (input) => {
- 
-  const { data } = await RecordAPI.post("/UpdateRecourceRecords", input);
-  console.log(data);
-  return data;
+ try {
+    const { data } = await RecordAPI.post("/UpdateRecourceRecords", input);
+    console.log(data);
+    return data;
+ } catch (error) {
+  console.log(error);
+ }
+  
 };
 
 export const DeleteRecord = async (input) => {
-  console.log("input : ", input);
-  const { data } = await RecordAPI.post("/DeleteRecourceRecords", input);
-  console.log(data);
-  return data;
+  try {
+    console.log("input : ", input);
+    const { data } = await RecordAPI.post("/DeleteRecourceRecords", input);
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };

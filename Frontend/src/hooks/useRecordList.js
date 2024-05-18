@@ -7,9 +7,13 @@ export const useRecordList = (Id) => {
   const dispatch = useDispatch();
     console.log("Id", Id);
   const getRecordList = async () => {
-    const data = await RecordList(Id);
-    console.log("data", data);
-    dispatch(setRecordList(data));
+    try {
+      const data = await RecordList(Id);
+      console.log("data", data);
+      dispatch(setRecordList(data));
+    } catch (error) {
+      console.log("Error fetching record list:", error);
+    }
   };
   useEffect(() => {
     getRecordList();

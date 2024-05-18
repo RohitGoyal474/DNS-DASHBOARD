@@ -18,11 +18,16 @@ const HostedZoneTable = ({ data }) => {
   };
 
   const handleChangeButton1 = (zone) => {
-    const Id = zone.Id;
-    const Idwithoutzone = Id.replace("/hostedzone/", "");
-    const name = zone.Name;
-    console.log("test : ", Idwithoutzone, name);
-    navigate("/Record/" + Idwithoutzone + "/" + name);
+    try {
+      const Id = zone.Id;
+      const Idwithoutzone = Id.replace("/hostedzone/", "");
+      const name = zone.Name;
+      console.log("test : ", Idwithoutzone, name);
+      navigate("/Record/" + Idwithoutzone + "/" + name);
+    } catch (error) {
+      console.log("error : ", error);
+    }
+    
   };
 
   const handleDelete = async (zoneId) => {

@@ -6,18 +6,26 @@ export const HostedZoneAPI = axios.create({
 });
 
 export const HostedZoneList = async () => {
-  const { data } = await HostedZoneAPI.get("/HostedZoneList", 
-    
-  );
   
-  return data;
+  try {
+    const { data } = await HostedZoneAPI.get("/HostedZoneList");
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export const CreateHostedZone = async (input) => {
-  console.log("input : ",input);
-  const data = await HostedZoneAPI.post("/ceateHostedZone", input,);
 
-  return data;
+  try {
+    console.log("input : ", input);
+    const data = await HostedZoneAPI.post("/ceateHostedZone", input);
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export const DeleteHostedZOne=async(Id)=>{
