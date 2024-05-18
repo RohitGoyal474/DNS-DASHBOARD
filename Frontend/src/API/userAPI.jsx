@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const RecordAPI = axios.create({
-  baseURL: "http://localhost:8000/api/v1/users",
+  baseURL: "https://dns-dashboard.onrender.com/api/v1/users",
   withCredentials: true,
 });
 
