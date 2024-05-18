@@ -6,7 +6,7 @@ const PieChart = ({ zoneData }) => {
     const privateZoneCount = zoneData.filter(zone => zone.Config.PrivateZone).length;
     const nonPrivateZoneCount = zoneData.length - privateZoneCount;
     return (
-    <div className="dataCard privateZoneCountCard bg-white p-4 shadow rounded-lg">
+    <div className="dataCard privateZoneCountCard bg-white p-4 shadow rounded-lg" style={{ width: '300px', height: '300px', marginLeft: '100px'}}>
             <Pie
                 data={{
                 labels: ['Private Zones', 'Non-Private Zones'],

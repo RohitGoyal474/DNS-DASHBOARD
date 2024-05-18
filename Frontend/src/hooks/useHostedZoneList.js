@@ -11,7 +11,7 @@ export const useHostedZoneList = () => {
         const data = await HostedZoneList();
         dispatch(setHostedZoneList(data));
       } catch (error) {
-        // Handle error if necessary
+        
         console.error("Error fetching hosted zone list:", error);
       }
     };
@@ -22,7 +22,6 @@ export const useHostedZoneList = () => {
     getHostedZoneList();
   }, [dispatch]);
 
-  // Return data if needed by the component
-  // You can modify this to return any additional data or state needed by the component
+  
   return null;
 };

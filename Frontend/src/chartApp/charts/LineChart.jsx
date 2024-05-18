@@ -4,7 +4,7 @@ import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 
 const LineChart = ({ zoneData }) => {
     return (
-        <div className="dataCard revenueCard bg-white p-4 shadow rounded-lg">
+        <div className="dataCard revenueCard bg-white p-4 shadow rounded-lg" style={{ width: '500px', height: '300px', marginLeft: '280px'}}>
           <Line
             data={{
               labels: zoneData.map((data) => data.Name),

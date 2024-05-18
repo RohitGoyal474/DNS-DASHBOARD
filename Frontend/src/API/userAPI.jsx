@@ -8,12 +8,19 @@ export const RecordAPI = axios.create({
 export const Register = async (input) => {
   console.log("input : ", input);
   const { data } = await RecordAPI.post("/Register", input);
-  console.log(data);
+  
   return data;
 };
 export const userLogin = async (input) => {
-  console.log("input : ", input);
-  const { data } = await RecordAPI.post("/login", input);
-  console.log(data);
-  return data;
+
+try {
+   
+   const { data } = await RecordAPI.post("/login", input);
+
+   
+   return data; 
+} catch (error) {
+    throw new Error(error.response.data.message);
+}
+  
 };
